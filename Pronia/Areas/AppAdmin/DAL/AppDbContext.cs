@@ -9,6 +9,7 @@ namespace Pronia.Areas.AppAdmin.DAL
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
+        public DbSet<Slider> Sliders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Category> Categories { get; set; }

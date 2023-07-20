@@ -26,6 +26,10 @@
     <None Remove="Utilities\Enums\" />
     <None Remove="Validators\" />
     <None Remove="Utilities\Extensions\" />
+    <None Remove="ViewModels\Account\" />
+    <None Remove="ViewModels\Slider\" />
+    <None Remove="Areas\AppAdmin\Views\Slider\" />
+    <None Remove="Areas\AppAdmin\Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -48,6 +52,10 @@
     <Folder Include="Utilities\Enums\" />
     <Folder Include="Validators\" />
     <Folder Include="Utilities\Extensions\" />
+    <Folder Include="ViewModels\Account\" />
+    <Folder Include="ViewModels\Slider\" />
+    <Folder Include="Areas\AppAdmin\Views\Slider\" />
+    <Folder Include="Areas\AppAdmin\Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

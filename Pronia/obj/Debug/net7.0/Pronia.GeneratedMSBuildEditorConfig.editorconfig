@@ -16,12 +16,40 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/zeyneb/Projects/Pronia/Pronia
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Account/Registr.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvQWNjb3VudC9SZWdpc3RyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Shared/_AccountLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvU2hhcmVkL19BY2NvdW50TGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvU2hhcmVkL19BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Slider/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvU2xpZGVyL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Slider/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvU2xpZGVyL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Slider/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvU2xpZGVyL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Slider/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvU2xpZGVyL1VwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/_ViewImports.cshtml]

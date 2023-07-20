@@ -1,0 +1,57 @@
+﻿@model Slider
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Striped Table</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Image
+                                        </th>
+                                        <th>
+                                            Order
+                                        </th>
+                                        <th>
+                                            Tittle
+                                        </th>
+                                        <th>
+                                            SubTittle
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-1">
+                                            <img src="~/assets/images/website-images/@Model.ImgUrl" alt="image" />
+                                        </td>
+                                        <td>
+                                            @Model.Order
+                                        </td>
+                                        <td>
+                                            @Model.Title
+                                        </td>
+                                        <td>
+                                            @Model.SubTitle
+                                        </td>
+                                        <td>
+                                            @Model.Description
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
