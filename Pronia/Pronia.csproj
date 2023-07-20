@@ -8,4 +8,64 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Models\Extra\" />
+    <None Remove="Models\Base\" />
+    <None Remove="Models\Tag\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\AppAdmin\" />
+    <None Remove="Areas\AppAdmin\Controllers\" />
+    <None Remove="Areas\AppAdmin\DAL\" />
+    <None Remove="Areas\AppAdmin\Models\" />
+    <None Remove="Areas\AppAdmin\Views\" />
+    <None Remove="Areas\AppAdmin\Views\Home\" />
+    <None Remove="Areas\AppAdmin\Views\Shared\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Utilities\" />
+    <None Remove="Utilities\Enums\" />
+    <None Remove="Validators\" />
+    <None Remove="Utilities\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Models\Extra\" />
+    <Folder Include="Models\Base\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="Models\Tag\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\AppAdmin\" />
+    <Folder Include="Areas\AppAdmin\Controllers\" />
+    <Folder Include="Areas\AppAdmin\DAL\" />
+    <Folder Include="Areas\AppAdmin\Models\" />
+    <Folder Include="Areas\AppAdmin\Views\" />
+    <Folder Include="Areas\AppAdmin\Views\Home\" />
+    <Folder Include="Areas\AppAdmin\Views\Shared\" />
+    <Folder Include="wwwroot\admin\" />
+    <Folder Include="wwwroot\assets\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Utilities\Enums\" />
+    <Folder Include="Validators\" />
+    <Folder Include="Utilities\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\admin\" />
+    <Content Remove="wwwroot\assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.9" />
+    <PackageReference Include="FluentValidation" Version="11.6.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+  </ItemGroup>
 </Project>

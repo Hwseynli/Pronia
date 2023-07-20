@@ -1,4 +1,46 @@
 ﻿<Properties StartupConfiguration="{25086B2B-9D2D-4EFD-A29C-0963859413C0}|https">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Utilities/Extensions/TextExtension.cs">
+    <Files>
+      <File FileName="Utilities/Extensions/TextExtension.cs" Line="7" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Pronia">
+            <Node name="Pronia">
+              <Node name="Areas" expanded="True">
+                <Node name="AppAdmin" expanded="True">
+                  <Node name="Controllers" expanded="True" />
+                  <Node name="DAL" expanded="True" />
+                  <Node name="Models" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Shared" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Utilities" expanded="True">
+                <Node name="Extensions">
+                  <Node name="TextExtension.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Validators" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Pronia PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Pronia FirstBuild="True" />
 </Properties>
