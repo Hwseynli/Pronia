@@ -33,7 +33,7 @@ namespace Pronia.Migrations
                     FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Age = table.Column<byte>(type: "tinyint", nullable: false),
-                    UserImgUrl = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: false),
+                    UserImgUrl = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -85,7 +85,7 @@ namespace Pronia.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Key = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    Link = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false)
+                    Link = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true)
                 },
                 constraints: table =>
                 {

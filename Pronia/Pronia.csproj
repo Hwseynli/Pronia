@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -30,6 +30,7 @@
     <None Remove="ViewModels\Slider\" />
     <None Remove="Areas\AppAdmin\Views\Slider\" />
     <None Remove="Areas\AppAdmin\Views\Account\" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -56,6 +57,7 @@
     <Folder Include="ViewModels\Slider\" />
     <Folder Include="Areas\AppAdmin\Views\Slider\" />
     <Folder Include="Areas\AppAdmin\Views\Account\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

@@ -1,71 +1,80 @@
 ﻿@{
-    Layout = "_AccountLayout";
+    Layout="_AccountLayout";
 }
 @model RegistrVM
-    <div class="col-lg-12 mx-auto">
-        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-            <div class="brand-logo">
-                <img src="~/admin/images/logo.svg" alt="logo">
+<div class="title">Registration</div>
+<div class="content">
+    <form method="post" enctype="multipart/form-data">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Your Photo</span>
+                <input asp-for="UserPhoto" accept="image/*" />
+                <span asp-validation-for="UserPhoto"></span>
             </div>
-            <h4>New here?</h4>
-            <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-            <form class="pt-3" method="post">
-                <div class="row">
-                    <div class="form-group col-9">
-                        <label asp-for="UserPhoto">Photo</label>
-                        <input asp-for="UserPhoto" class="form-control form-control-lg" placeholder="UserPhoto" accept="image/*" />
-                        <span asp-validation-for="UserPhoto"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="Name">Name</label>
-                        <input asp-for="Name" class="form-control form-control-lg" placeholder="Name">
-                        <span asp-validation-for="Name"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="Surname">Surname</label>
-                        <input asp-for="Surname" class="form-control form-control-lg" placeholder="Surname">
-                        <span asp-validation-for="Surname"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="Age">Age</label>
-                        <input asp-for="Age" class="form-control form-control-lg" placeholder="Age">
-                        <span asp-validation-for="Age"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="Gender">Gender</label><br>
-                        <input type="radio" asp-for="Gender" placeholder="Gender" value="Male"> Male<br>
-                        <input type="radio" asp-for="Gender" placeholder="Gender" value="Female"> Female
-                        <span asp-validation-for="Gender"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="Username">Username</label>
-                        <input asp-for="Username" class="form-control form-control-lg" placeholder="Username">
-                        <span asp-validation-for="Username"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="Password">Password</label>
-                        <input type="password" asp-for="Password" class="form-control form-control-lg" placeholder="Password">
-                        <span asp-validation-for="Password"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="Email">Email</label>
-                        <input type="email" asp-for="Email" class="form-control form-control-lg" placeholder="Email">
-                        <span asp-validation-for="Email"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="ConfirmPassword">ConfirmPassword</label>
-                        <input type="password" asp-for="ConfirmPassword" class="form-control form-control-lg" placeholder="ConfirmPassword">
-                        <span asp-validation-for="ConfirmPassword"></span>
-                    </div>
-                </div>
-                <div class="mb-4" asp-validation-summary="ModelOnly">
-                </div>
-                <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="~/admin/index.html">SIGN UP</button>
-                </div>
-                <div class="text-center mt-6 font-weight-light">
-                    Already have an account? <a asp-action="Login" asp-controller="Account" asp-area="AppAdmin" class="text-primary">Login</a>
-                </div>
-            </form>
+            <div class="input-box">
+                <span class="details">Name</span>
+                <input asp-for="Name" placeholder="Enter your name" required>
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="input-box">
+                <span class="details">Surname</span>
+                <input asp-for="Surname" placeholder="Enter your Surname" required>
+                <span asp-validation-for="Surname"></span>
+            </div>
+            <div class="input-box">
+                <span class="details">Age</span>
+                <input asp-for="Age" placeholder="Enter your Age" required>
+                <span asp-validation-for="Age"></span>
+            </div>
+            <div class="input-box">
+                <span class="details">Username</span>
+                <input asp-for="Username" placeholder="Enter your Username" required>
+                <span asp-validation-for="Username"></span>
+            </div>
+            <div class="input-box">
+                <span class="details">Email</span>
+                <input asp-for="Email" placeholder="Enter your Email" required>
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="input-box">
+                <span class="details">Password</span>
+                <input asp-for="Password" placeholder="Enter your Password" required>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="input-box">
+                <span class="details">ConfirmPassword</span>
+                <input asp-for="ConfirmPassword" placeholder="Enter your ConfirmPassword" required>
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
         </div>
+        <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" value="Male" />
+            <input type="radio" name="gender" id="dot-2" value="Female" />
+            <input type="radio" name="gender" id="dot-3" value="Other" />
+            <span class="gender-title">Gender</span>
+            <div class="category">
+                <label for="dot-1" asp-for="Gender">
+                    <span class="dot one"></span>
+                    <span class="gender">Male</span>
+                </label>
+                <label for="dot-2" asp-for="Gender">
+                    <span class="dot two"></span>
+                    <span class="gender">Female</span>
+                </label>
+                <label for="dot-3" asp-for="Gender">
+                    <span class="dot three"></span>
+                    <span class="gender">Prefer not to say</span>
+                </label>
+            </div>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+        <div class="button">
+            <input type="submit" value="Register" />
+        </div>
+        <div class="signup">
+            Have your account? <a asp-action="Login" asp-controller="Account" asp-area="AppAdmin">SignIn now</a>
+        </div>
+        <div class="text-danger" asp-validation-summary="ModelOnly">
+        </div>
+    </form>
 </div>

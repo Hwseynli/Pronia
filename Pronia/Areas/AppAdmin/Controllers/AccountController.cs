@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pronia.Utilities.Enums;
 
@@ -11,7 +10,6 @@ namespace Pronia.Areas.AppAdmin.Controllers
     [AutoValidateAntiforgeryToken]
     public class AccountController : Controller
     {
-        private Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
@@ -32,32 +30,33 @@ namespace Pronia.Areas.AppAdmin.Controllers
         public async Task<IActionResult> Registr(RegistrVM newuser, string ReturnUrl)
         {
             if (!ModelState.IsValid) return View();
-            if (newuser.Name.Capitalize()=="" )
+            if (newuser.Name.Capitalize() == null)
             {
-                ModelState.AddModelError("Name","Duzgun ad daxil edin");
+                ModelState.AddModelError("Name","Duzgun deyer daxil edin");
                 return View();
             }
-            if (newuser.Surname.Capitalize() == "")
+            if (newuser.Surname.Capitalize() == null)
             {
-                ModelState.AddModelError("Surname", "Duzgun soyad daxil edin");
+                ModelState.AddModelError("Surname", "Duzgun deyer daxil edin");
                 return View();
             }
-            if (newuser.Username.Capitalize() == "")
+            if (newuser.Username.Capitalize() == null)
             {
-                ModelState.AddModelError("Username", "Duzgun ad daxil edin");
+                ModelState.AddModelError("Username", "Duzgun deyer daxil edin");
                 return View();
             }
-            if (regex.IsMatch(newuser.Email) == false)
+            if (!newuser.Email.IsEmail())
             {
-                ModelState.AddModelError("Email","Emaili duzgun daxil edin");
+                ModelState.AddModelError("Email", "Duzgun email daxil edin!");
                 return View();
             }
-                AppUser user = new AppUser
+            AppUser user = new AppUser
             {
-                FullName = newuser.Name.Capitalize() + " " + newuser.Surname.Capitalize(),
-                Email = newuser.Email,
-                UserName = newuser.Username.Capitalize()
+                FullName = newuser.Name.Capitalize() + " "+ newuser.Surname.Capitalize(),
+                UserName = newuser.Username.Capitalize(),
+                Email=newuser.Email
             };
+
             if (newuser.Age < 0) return View();
             user.Age = newuser.Age;
             if (newuser.Gender == "Male" || newuser.Gender == "Female" || newuser.Gender == "Other")
@@ -71,9 +70,9 @@ namespace Pronia.Areas.AppAdmin.Controllers
                     ModelState.AddModelError("Photo", "Gonderilen file-nin tipi uygun deyil");
                     return View();
                 }
-                if (!newuser.UserPhoto.CheckFileSize(2000))
+                if (!newuser.UserPhoto.CheckFileSize(20000))
                 {
-                    ModelState.AddModelError("Photo", "Gonderilen file-nin hecmi 2000 kb-den boyuk olmamalidir");
+                    ModelState.AddModelError("Photo", "Gonderilen file-nin hecmi 20000 kb-den boyuk olmamalidir");
                     return View();
                 }
                 user.UserImgUrl = await newuser.UserPhoto.CreateFileAsync(_env.WebRootPath, fileaddress);
@@ -87,7 +86,7 @@ namespace Pronia.Areas.AppAdmin.Controllers
                 }
                 return View();
             }
-            await _userManager.AddToRoleAsync(user, UserRole.Costumer.ToString());
+            await _userManager.AddToRoleAsync(user, UserRole.Admin.ToString());
             await _signInManager.SignInAsync(user, false);
             if (ReturnUrl is null)
             {

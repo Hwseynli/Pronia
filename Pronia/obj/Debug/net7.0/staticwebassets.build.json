@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cyJ9Dfu8f8ppSrmaFvDanfh6sPC/+euDPA9PNV5Lavs=",
+  "Hash": "OHNzIxR/ezUyLMDc2MeEK/9F8sXvAYhZGklVR+ocNs0=",
   "Source": "Pronia",
   "BasePath": "_content/Pronia",
   "Mode": "Default",
@@ -1156,6 +1156,40 @@
       "OriginalItemSpec": "wwwroot/admin/images/logo.svg"
     },
     {
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/images/user-images/f565f20a-8b3b-44da-93f4-66453eb1b4391-1-120x120.jpeg",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "admin/images/user-images/f565f20a-8b3b-44da-93f4-66453eb1b4391-1-120x120.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/images/user-images/f565f20a-8b3b-44da-93f4-66453eb1b4391-1-120x120.jpeg"
+    },
+    {
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/images/user-images/usernoimg.jpeg",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "admin/images/user-images/usernoimg.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/images/user-images/usernoimg.jpeg"
+    },
+    {
       "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/js/.DS_Store",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
@@ -1392,6 +1426,74 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/admin/js/template.js"
+    },
+    {
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/.DS_Store",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "admin/login/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/login/.DS_Store"
+    },
+    {
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/bg.jpg",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "admin/login/bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/login/bg.jpg"
+    },
+    {
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/registr.css",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "admin/login/registr.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/login/registr.css"
+    },
+    {
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/style.css",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "admin/login/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/login/style.css"
     },
     {
       "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/package-lock.json",
@@ -2414,23 +2516,6 @@
       "OriginalItemSpec": "wwwroot/admin/scss/style.scss"
     },
     {
-      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/usernoimg.jpeg",
-      "SourceId": "Pronia",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
-      "BasePath": "_content/Pronia",
-      "RelativePath": "admin/usernoimg.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/admin/usernoimg.jpeg"
-    },
-    {
       "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/vendors/.DS_Store",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
@@ -3024,6 +3109,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/fonts/Pe-icon-7-stroke.woff"
+    },
+    {
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/.DS_Store",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "assets/images/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/images/.DS_Store"
     },
     {
       "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/about/icon/1.png",
@@ -4556,12 +4658,12 @@
       "OriginalItemSpec": "wwwroot/assets/images/website-images/1--1rnu4p.png"
     },
     {
-      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-1-120x120.webp",
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-1-120x120.jpeg",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
       "BasePath": "_content/Pronia",
-      "RelativePath": "assets/images/website-images/1-1-120x120.webp",
+      "RelativePath": "assets/images/website-images/1-1-120x120.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4570,7 +4672,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/images/website-images/1-1-120x120.webp"
+      "OriginalItemSpec": "wwwroot/assets/images/website-images/1-1-120x120.jpeg"
     },
     {
       "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-1-1820x443.jpg",
@@ -4794,12 +4896,12 @@
       "OriginalItemSpec": "wwwroot/assets/images/website-images/1-1920x465.jpg"
     },
     {
-      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-2-120x120.webp",
+      "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-2-120x120.jpeg",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/",
       "BasePath": "_content/Pronia",
-      "RelativePath": "assets/images/website-images/1-2-120x120.webp",
+      "RelativePath": "assets/images/website-images/1-2-120x120.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4808,7 +4910,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/images/website-images/1-2-120x120.webp"
+      "OriginalItemSpec": "wwwroot/assets/images/website-images/1-2-120x120.jpeg"
     },
     {
       "Identity": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-2-270x300.jpg",

@@ -2,12 +2,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Pronia.Areas.AppAdmin.DAL;
+using Pronia.Services;
 using Pronia.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddIdentity<AppUser, IdentityRole>(ops =>
 {
-    ops.Password.RequireNonAlphanumeric = true;
+    ops.Password.RequireNonAlphanumeric = false;
     ops.Password.RequiredLength = 0;
     ops.Password.RequireUppercase = true;
     ops.Password.RequireLowercase = true;
@@ -32,7 +33,7 @@ builder.Services.AddDbContext<AppDbContext>(ops =>
 {
     ops.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
-//builder.Services.AddScoped<LayoutService>();
+builder.Services.AddScoped<LayoutService>();
 var app = builder.Build();
 
 app.UseHttpsRedirection();

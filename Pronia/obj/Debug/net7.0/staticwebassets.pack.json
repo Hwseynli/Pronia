@@ -269,6 +269,14 @@
       "PackagePath": "staticwebassets/admin/images/logo.svg"
     },
     {
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/images/user-images/f565f20a-8b3b-44da-93f4-66453eb1b4391-1-120x120.jpeg",
+      "PackagePath": "staticwebassets/admin/images/user-images/f565f20a-8b3b-44da-93f4-66453eb1b4391-1-120x120.jpeg"
+    },
+    {
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/images/user-images/usernoimg.jpeg",
+      "PackagePath": "staticwebassets/admin/images/user-images/usernoimg.jpeg"
+    },
+    {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/js/.DS_Store",
       "PackagePath": "staticwebassets/admin/js/.DS_Store"
     },
@@ -323,6 +331,22 @@
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/js/template.js",
       "PackagePath": "staticwebassets/admin/js/template.js"
+    },
+    {
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/.DS_Store",
+      "PackagePath": "staticwebassets/admin/login/.DS_Store"
+    },
+    {
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/bg.jpg",
+      "PackagePath": "staticwebassets/admin/login/bg.jpg"
+    },
+    {
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/registr.css",
+      "PackagePath": "staticwebassets/admin/login/registr.css"
+    },
+    {
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/login/style.css",
+      "PackagePath": "staticwebassets/admin/login/style.css"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/package-lock.json",
@@ -565,10 +589,6 @@
       "PackagePath": "staticwebassets/admin/scss/style.scss"
     },
     {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/usernoimg.jpeg",
-      "PackagePath": "staticwebassets/admin/usernoimg.jpeg"
-    },
-    {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/admin/vendors/.DS_Store",
       "PackagePath": "staticwebassets/admin/vendors/.DS_Store"
     },
@@ -707,6 +727,10 @@
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/fonts/fontawesome-webfont.woff2",
       "PackagePath": "staticwebassets/assets/fonts/fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/.DS_Store",
+      "PackagePath": "staticwebassets/assets/images/.DS_Store"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/about/icon/1.png",
@@ -1069,8 +1093,8 @@
       "PackagePath": "staticwebassets/assets/images/website-images/1--1rnu4p.png"
     },
     {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-1-120x120.webp",
-      "PackagePath": "staticwebassets/assets/images/website-images/1-1-120x120.webp"
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-1-120x120.jpeg",
+      "PackagePath": "staticwebassets/assets/images/website-images/1-1-120x120.jpeg"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-1-1820x443.jpg",
@@ -1125,8 +1149,8 @@
       "PackagePath": "staticwebassets/assets/images/website-images/1-1920x465.jpg"
     },
     {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-2-120x120.webp",
-      "PackagePath": "staticwebassets/assets/images/website-images/1-2-120x120.webp"
+      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-2-120x120.jpeg",
+      "PackagePath": "staticwebassets/assets/images/website-images/1-2-120x120.jpeg"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1-2-270x300.jpg",

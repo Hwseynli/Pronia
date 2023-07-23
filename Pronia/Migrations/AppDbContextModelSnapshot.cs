@@ -217,7 +217,6 @@ namespace Pronia.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserImgUrl")
-                        .IsRequired()
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
 
@@ -404,7 +403,6 @@ namespace Pronia.Migrations
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Link")
-                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 

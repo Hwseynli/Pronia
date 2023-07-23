@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Pronia.Utilities.Extensions
 {
@@ -24,9 +25,21 @@ namespace Pronia.Utilities.Extensions
             }
             else
             {
-                return "";
+                return null;
             }
         }
-	}
+        public static bool IsEmail(this string email)
+        {
+            Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            if (regex.IsMatch(email))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }
 

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@inject LayoutService service;
+@{
+    AppUser user = await service.GetUser();
+}
+<!DOCTYPE html>
 <html lang="zxx">
 <head>
     <meta charset="UTF-8" />
@@ -28,7 +32,6 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="~/assets/css/style.css" />
 </head>
-
 <body>
     <div class="preloader-activate preloader-active open_tm_preloader">
         <div class="preloader-area-wrap">
@@ -99,8 +102,7 @@
                                     <i class="pe-7s-call"></i>
                                     <a href="tel://+00-123-456-789">+00 123 456 789</a>
                                 </div>
-
-                                <a href="index.html" class="header-logo">
+                                <a asp-action="Index" asp-controller="Home" class="header-logo">
                                     <img src="~/assets/images/logo/dark.png" alt="Header Logo" />
                                 </a>
 
@@ -114,6 +116,58 @@
                                                 <i class="pe-7s-search"></i>
                                             </a>
                                         </li>
+                                        @if (user != null && User.Identity.IsAuthenticated)
+                                        {
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                                <li class="dropdown d-none d-lg-block">
+                                                    <button class="btn btn-link dropdown-toggle ht-btn p-0"
+                                                            type="button"
+                                                            id="settingButton"
+                                                            data-bs-toggle="dropdown"
+                                                            aria-label="setting"
+                                                            aria-expanded="false">
+                                                        <img style="border: 2px solid #cddc39; padding: 1px; border-radius: 50%; border-top-color: #ff5722; border-left-color: #ff5722; width: 45px; height: 45px; " src="~/admin/images/user-images/@user.UserImgUrl" />
+                                                    </button>
+                                                    <ul class="dropdown-menu"
+                                                        aria-labelledby="settingButton">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">@user.UserName</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" asp-action="Logout" asp-controller="Account" asp-area="AppAdmin">Log Out</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" asp-action="Index" asp-controller="Home" asp-area="AppAdmin">Settings</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            }
+                                        }
+                                        else if(user!=null && User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                                        {
+                                            <li class="dropdown d-none d-lg-block">
+                                                <button class="btn btn-link dropdown-toggle ht-btn p-0"
+                                                        type="button"
+                                                        id="settingButton"
+                                                        data-bs-toggle="dropdown"
+                                                        aria-label="setting"
+                                                        aria-expanded="false">
+                                                    <img style="border: 2px solid #cddc39; padding: 1px; border-radius: 50%; border-top-color: #ff5722; border-left-color: #ff5722; width: 45px; height: 45px; " src="~/admin/images/user-images/@user.UserImgUrl" />
+                                                </button>
+                                                <ul class="dropdown-menu"
+                                                    aria-labelledby="settingButton">
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">@user.UserName</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-action="Logout" asp-controller="Account" asp-area="AppAdmin">Log Out</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        }
+                                        else
+                                        {
                                         <li class="dropdown d-none d-lg-block">
                                             <button class="btn btn-link dropdown-toggle ht-btn p-0"
                                                     type="button"
@@ -126,13 +180,14 @@
                                             <ul class="dropdown-menu"
                                                 aria-labelledby="settingButton">
                                                 <li>
-                                                    <a class="dropdown-item" href="my-account.html">My account</a>
+                                                    <a class="dropdown-item" asp-action="Registr" asp-controller="Account" asp-area="AppAdmin">Registr</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="login-register.html">Login | Register</a>
+                                                    <a class="dropdown-item" asp-action="Login" asp-controller="Account" asp-area="AppAdmin">Login</a>
                                                 </li>
                                             </ul>
                                         </li>
+                                        }
                                         <li class="d-none d-lg-block">
                                             <a href="wishlist.html">
                                                 <i class="pe-7s-like"></i>

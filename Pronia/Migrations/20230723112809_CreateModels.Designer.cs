@@ -12,7 +12,7 @@ using Pronia.Areas.AppAdmin.DAL;
 namespace Pronia.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230720183532_CreateModels")]
+    [Migration("20230723112809_CreateModels")]
     partial class CreateModels
     {
         /// <inheritdoc />
@@ -220,7 +220,6 @@ namespace Pronia.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserImgUrl")
-                        .IsRequired()
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
 
@@ -407,7 +406,6 @@ namespace Pronia.Migrations
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Link")
-                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
