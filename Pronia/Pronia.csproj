@@ -31,6 +31,12 @@
     <None Remove="Areas\AppAdmin\Views\Slider\" />
     <None Remove="Areas\AppAdmin\Views\Account\" />
     <None Remove="Services\" />
+    <None Remove="Areas\AppAdmin\Controllers\HelpCruts\" />
+    <None Remove="ViewModels\Category\" />
+    <None Remove="ViewModels\Tag\" />
+    <None Remove="ViewModels\Color\" />
+    <None Remove="ViewModels\Size\" />
+    <None Remove="ViewModels\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -58,6 +64,12 @@
     <Folder Include="Areas\AppAdmin\Views\Slider\" />
     <Folder Include="Areas\AppAdmin\Views\Account\" />
     <Folder Include="Services\" />
+    <Folder Include="Areas\AppAdmin\Controllers\HelpCruts\" />
+    <Folder Include="ViewModels\Category\" />
+    <Folder Include="ViewModels\Tag\" />
+    <Folder Include="ViewModels\Color\" />
+    <Folder Include="ViewModels\Size\" />
+    <Folder Include="ViewModels\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

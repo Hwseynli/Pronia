@@ -6,7 +6,8 @@ namespace Pronia
 	{
 		public MapperProfile()
 		{
-            
+			CreateMap<Category, CreateCategoryVM>();
+			CreateMap<CreateCategoryVM, Category>();
         }
 	}
 }

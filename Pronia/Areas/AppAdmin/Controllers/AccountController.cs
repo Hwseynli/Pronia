@@ -86,7 +86,7 @@ namespace Pronia.Areas.AppAdmin.Controllers
                 }
                 return View();
             }
-            await _userManager.AddToRoleAsync(user, UserRole.Admin.ToString());
+            await _userManager.AddToRoleAsync(user, UserRole.Costumer.ToString());
             await _signInManager.SignInAsync(user, false);
             if (ReturnUrl is null)
             {
