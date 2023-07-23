@@ -12,7 +12,7 @@ using Pronia.Areas.AppAdmin.DAL;
 namespace Pronia.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230723112809_CreateModels")]
+    [Migration("20230723172116_CreateModels")]
     partial class CreateModels
     {
         /// <inheritdoc />
@@ -282,7 +282,7 @@ namespace Pronia.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsPramery")
+                    b.Property<bool?>("IsPrimary")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")

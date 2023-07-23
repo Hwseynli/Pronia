@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Pronia.Utilities.Enums;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Pronia.Areas.AppAdmin.Controllers
 {
     [Area("AppAdmin")]
@@ -86,7 +82,16 @@ namespace Pronia.Areas.AppAdmin.Controllers
                 }
                 return View();
             }
-            await _userManager.AddToRoleAsync(user, UserRole.Costumer.ToString());
+            AppUser user1 = await _userManager.Users.FirstOrDefaultAsync();
+            if (user1==null)
+            {
+                await _userManager.AddToRoleAsync(user, UserRole.Admin.ToString());
+            }
+            else
+            {
+                await _userManager.AddToRoleAsync(user, UserRole.Costumer.ToString());
+
+            }
             await _signInManager.SignInAsync(user, false);
             if (ReturnUrl is null)
             {

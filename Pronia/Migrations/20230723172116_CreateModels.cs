@@ -281,7 +281,7 @@ namespace Pronia.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsPramery = table.Column<bool>(type: "bit", nullable: false),
+                    IsPrimary = table.Column<bool>(type: "bit", nullable: true),
                     ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },

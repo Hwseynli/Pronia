@@ -279,7 +279,7 @@ namespace Pronia.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsPramery")
+                    b.Property<bool?>("IsPrimary")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")

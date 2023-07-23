@@ -1,20 +1,48 @@
 ﻿<Properties StartupConfiguration="{25086B2B-9D2D-4EFD-A29C-0963859413C0}|https">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Controllers/AccountController.cs" relfile="Areas/AppAdmin/Controllers/AccountController.cs" line="31" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Pronia PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="Areas/AppAdmin/Controllers/ProductController.cs" Line="29" Column="10" />
+      <File FileName="Areas/AppAdmin/Views/Color/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Size/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Tag/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Category/Update.cshtml" Line="8" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Size/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Size/Update.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Tag/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Tag/Update.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Color/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Color/Update.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Views/Category/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/Controllers/AccountController.cs" Line="4" Column="2" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="347" Column="74" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Pronia" expanded="True">
+          <Node name="Pronia">
             <Node name="Pronia">
               <Node name="Areas" expanded="True">
                 <Node name="AppAdmin" expanded="True">
                   <Node name="Controllers" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Category" expanded="True" />
+                    <Node name="Color" expanded="True" />
+                    <Node name="Size" expanded="True" />
+                    <Node name="Tag" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="Extra" expanded="True" />
+              </Node>
+              <Node name="Views">
+                <Node name="Shared">
+                  <Node name="_Layout.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>
