@@ -217,17 +217,20 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                            <i class="mdi mdi-account menu-icon"></i>
-                            <span class="menu-title">User Pages</span>
+                            <i class="mdi mdi-blur-radial menu-icon"></i>
+                            <span class="menu-title">Crut Pages</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/login.html"> Login </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/login-2.html"> Login 2 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/register.html"> Register </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/register-2.html"> Register 2 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/lock-screen.html"> Lockscreen </a></li>
+                                <li class="nav-item">
+                                <a class="nav-link" asp-action="Index" asp-controller="Color" asp-area="AppAdmin"> Color </a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" asp-action="Index" asp-controller="Size" asp-area="AppAdmin"> Size </a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Tag" asp-area="AppAdmin"> Tag </a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Category" asp-area="AppAdmin"> Category </a></li>
                             </ul>
                         </div>
                     </li>

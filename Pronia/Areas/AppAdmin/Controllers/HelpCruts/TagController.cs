@@ -54,7 +54,11 @@
             if (id == null) return BadRequest();
             Tag existed = await _context.Tags.FirstOrDefaultAsync(c => c.Id == id);
             if (existed == null) return NotFound();
-            return View(existed);
+            UpdateTagVM tagVM = new UpdateTagVM
+            {
+                Name = existed.Name
+            };
+            return View(tagVM);
         }
 
         [HttpPost]

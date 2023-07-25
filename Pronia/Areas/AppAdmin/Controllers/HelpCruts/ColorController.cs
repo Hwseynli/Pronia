@@ -54,7 +54,11 @@
             if (id == null) return BadRequest();
             Color existed = await _context.Colors.FirstOrDefaultAsync(c => c.Id == id);
             if (existed == null) return NotFound();
-            return View(existed);
+            UpdateColorVM colorVM = new UpdateColorVM
+            {
+                Name = existed.Name
+            };
+            return View(colorVM);
         }
 
         [HttpPost]

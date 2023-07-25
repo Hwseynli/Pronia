@@ -56,7 +56,11 @@ namespace Pronia.Areas.AppAdmin.Controllers
             if (id == null) return BadRequest();
             Category existed = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
             if (existed == null) return NotFound();
-            return View(existed);
+            UpdateCategoryVM categoryVM = new UpdateCategoryVM
+            {
+                Name = existed.Name
+            };
+            return View(categoryVM);
         }
 
         [HttpPost]

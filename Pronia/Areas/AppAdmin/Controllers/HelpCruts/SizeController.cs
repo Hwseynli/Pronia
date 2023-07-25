@@ -31,18 +31,13 @@
 
             if (result)
             {
-                ModelState.AddModelError("Measure", "Bu adda olcu artiq movcuddur");
-                return View();
-            }
-            if (sizeVM.Measure.Capitalize == null)
-            {
-                ModelState.AddModelError("Measure", "Duzgun ad daxil edin!");
+                ModelState.AddModelError("Measure", "Bu adda reng artiq movcuddur");
                 return View();
             }
             //Size size = _mapper.Map<Size>(sizeVM);
             Size size = new Size
             {
-                Measure = sizeVM.Measure.Capitalize()
+                Measure = sizeVM.Measure.Trim()
             };
             await _context.Sizes.AddAsync(size);
             await _context.SaveChangesAsync();
@@ -54,7 +49,11 @@
             if (id == null) return BadRequest();
             Size existed = await _context.Sizes.FirstOrDefaultAsync(c => c.Id == id);
             if (existed == null) return NotFound();
-            return View(existed);
+            UpdateSizeVM sizeVM = new UpdateSizeVM
+            {
+                Measure = existed.Measure
+            };
+            return View(sizeVM);
         }
 
         [HttpPost]
@@ -77,13 +76,7 @@
                 ModelState.AddModelError("Measure", "Bu adda olcu artiq movcuddur");
                 return View(existed);
             }
-            if (sizeVM.Measure.Capitalize() == null)
-            {
-                ModelState.AddModelError("Measure", "Duzgun ad daxil edin!");
-                return View();
-            }
-
-            existed.Measure = sizeVM.Measure.Capitalize();
+            existed.Measure = sizeVM.Measure.Trim();
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
