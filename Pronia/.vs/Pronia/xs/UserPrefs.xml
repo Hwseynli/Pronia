@@ -1,39 +1,35 @@
 ﻿<Properties StartupConfiguration="{25086B2B-9D2D-4EFD-A29C-0963859413C0}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/AppAdmin/Controllers/ProductController.cs">
+  <MonoDevelop.Ide.ItemProperties.Pronia PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/AppAdmin/DAL/AppDbContext.cs">
     <Files>
-      <File FileName="Areas/AppAdmin/Controllers/ProductController.cs" Line="201" Column="21" />
-      <File FileName="Areas/AppAdmin/Views/Product/Update.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/AppAdmin/DAL/AppDbContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Pronia">
             <Node name="Pronia">
-              <Node name="Areas">
-                <Node name="AppAdmin">
-                  <Node name="Controllers">
-                    <Node name="ProductController.cs" selected="True" />
+              <Node name="Areas" expanded="True">
+                <Node name="AppAdmin" expanded="True">
+                  <Node name="DAL" expanded="True">
+                    <Node name="AppDbContext.cs" selected="True" />
                   </Node>
-                  <Node name="Views">
+                  <Node name="Views" expanded="True">
                     <Node name="Product" expanded="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="ViewModels">
-                <Node name="Size" expanded="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Pronia PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

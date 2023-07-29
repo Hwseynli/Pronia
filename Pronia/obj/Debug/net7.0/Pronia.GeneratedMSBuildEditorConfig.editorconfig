@@ -48,8 +48,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvQ29sb3IvVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvRW1wbG95ZWUvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvRW1wbG95ZWUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Employee/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvRW1wbG95ZWUvVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Position/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvUG9zaXRpb24vQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Position/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvUG9zaXRpb24vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Position/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQXBwQWRtaW4vVmlld3MvUG9zaXRpb24vVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Views/Product/Create.cshtml]

@@ -1,12 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Pronia.Areas.AppAdmin.Controllers
+﻿namespace Pronia.Areas.AppAdmin.Controllers
 {
     [Area("AppAdmin")]
     [AutoValidateAntiforgeryToken]
     public class ProductController : Controller
     {
-        public string Imageroot { get; set; } = @"assets/images/website-images";
+        //public string Imageroot { get; set; } = @"assets/images/website-images";
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
         public ProductController(AppDbContext context, IWebHostEnvironment env)
@@ -117,7 +115,7 @@ namespace Pronia.Areas.AppAdmin.Controllers
                 Image mainImage = new Image
                 {
                     Name="ProductPhoto",
-                    ImgUrl = await productVM.MainPhoto.CreateFileAsync(_env.WebRootPath, Imageroot),
+                    ImgUrl = await productVM.MainPhoto.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
                     IsPrimary = true,
                     Product = product
                 };
@@ -138,7 +136,7 @@ namespace Pronia.Areas.AppAdmin.Controllers
                 Image hoverImage = new Image
                 {
                     Name="ProductPhoto",
-                    ImgUrl = await productVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, Imageroot),
+                    ImgUrl = await productVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
                     IsPrimary = false,
                     Product = product
                 };
@@ -164,7 +162,7 @@ namespace Pronia.Areas.AppAdmin.Controllers
                         Image addImage = new Image
                         {
                             Name="ProductPhotos",
-                            ImgUrl = await photo.CreateFileAsync(_env.WebRootPath, Imageroot),
+                            ImgUrl = await photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
                             IsPrimary = null,
                             Product = product
                         };
@@ -201,147 +199,153 @@ namespace Pronia.Areas.AppAdmin.Controllers
             productVM = MapImages(productVM, product);
             return View(productVM);
         }
-        //[HttpPost]
-        //public async Task<IActionResult> Update(Guid? id, UpdateProductVM productVM)
-        //{
-        //    ViewBag.Categories = await _context.Categories.ToListAsync();
-        //    ViewBag.Tags = await _context.Tags.ToListAsync();
-        //    ViewBag.Colors = await _context.Colors.ToListAsync();
-        //    ViewBag.Sizes = await _context.Sizes.ToListAsync();
-        //    if (id == null) return BadRequest();
-        //    Product existed = await _context.Products.Where(p => p.Id == id).Include(p => p.ProductTags).Include(p => p.Images).FirstOrDefaultAsync();
-        //    if (existed is null) return NotFound();
-        //    productVM = MapImages(productVM, existed);
-        //    if (!ModelState.IsValid) return View(productVM);
-        //    if (!await _context.Categories.AnyAsync(c => c.Id == productVM.CategoryId))
-        //    {
-        //        ModelState.AddModelError("CategoryId", "Bele bir category yoxdur");
-        //        return View(productVM);
-        //    }
-        //    existed.CategoryId = productVM.CategoryId;
-        //    if (!await _context.Colors.AnyAsync(c => c.Id == productVM.ColorId))
-        //    {
-        //        ModelState.AddModelError("ColorId", "Bele bir reng yoxdur");
-        //        return View(productVM);
-        //    }
-        //    existed.ColorId = productVM.ColorId;
-        //    if (!await _context.Sizes.AnyAsync(c => c.Id == productVM.SizeId))
-        //    {
-        //        ModelState.AddModelError("SizeId", "Bele bir olcu yoxdur");
-        //        return View(productVM);
-        //    }
-        //    existed.SizeId = productVM.SizeId;
-        //    if (productVM.Price > 0)existed.Price = productVM.Price;
-        //    if (productVM.Description != null && productVM.Description.Length > 2001) existed.Description = productVM.Description;
-        //    if (productVM.Name != null&&productVM.Name.Length>50)existed.Name = productVM.Name;
-        //    if (productVM.SKU != null&&productVM.SKU.Length>201)existed.SKU = productVM.SKU;
-        //    if (productVM.Count >= 0) existed.Count = productVM.Count;
-        //    if (productVM.TagIds is null)
-        //    {
-        //        ModelState.AddModelError("TagIds", "En azi 1 tag secin");
-        //        return View(productVM);
-        //    }
-        //    if (productVM.MainPhoto != null)
-        //    {
-        //        if (!productVM.MainPhoto.CheckFileType("image/"))
-        //        {
-        //            ModelState.AddModelError("MainPhoto", "Sheklin novu uygun deyil");
-        //            return View(productVM);
-        //        }
-        //        if (!productVM.MainPhoto.CheckFileSize(200))
-        //        {
-        //            ModelState.AddModelError("MainPhoto", "Sheklin olcusu uygun deyil");
-        //            return View(productVM);
-        //        }
-        //        var mainImage = existed.Images.FirstOrDefault(pi => pi.IsPrimary == true);
-        //        mainImage.ImgUrl.DeleteFile(_env.WebRootPath, Imageroot);
-        //        existed.Images.Remove(mainImage);
-        //        Image roomImage = new Image
-        //        {
-        //            Name= "MainPhoto",
-        //            ProductId = existed.Id,
-        //            ImgUrl = await productVM.MainPhoto.CreateFileAsync(_env.WebRootPath, Imageroot),
-        //            IsPrimary = true
-        //        };
-        //        existed.Images.Add(roomImage);
-        //    }
-        //    if (productVM.HoverPhoto != null)
-        //    {
-        //        if (!productVM.HoverPhoto.CheckFileType("image/"))
-        //        {
-        //            ModelState.AddModelError("HoverPhoto", "Sheklin novu uygun deyil");
-        //            return View(productVM);
-        //        }
-        //        if (!productVM.HoverPhoto.CheckFileSize(200))
-        //        {
-        //            ModelState.AddModelError("HoverPhoto", "Sheklin olcusu uygun deyil");
-        //            return View(productVM);
-        //        }
-        //        var mainImage = existed.Images.FirstOrDefault(pi => pi.IsPrimary == true);
-        //        mainImage.ImgUrl.DeleteFile(_env.WebRootPath, Imageroot);
-        //        existed.Images.Remove(mainImage);
-        //        Image roomImage = new Image
-        //        {
-        //            Name= "HoverPhoto",
-        //            ProductId = existed.Id,
-        //            ImgUrl = await productVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, Imageroot),
-        //            IsPrimary = false
-        //        };
-        //        existed.Images.Add(roomImage);
-        //    }
-        //    List<Image> removeImageList = existed.Images.Where(pi => !productVM.ImagesIds.Contains(pi.Id) && pi.IsPrimary == null).ToList();
-        //    foreach (Image pImage in removeImageList)
-        //    {
-        //        pImage.ImgUrl.DeleteFile(_env.WebRootPath, Imageroot);
-        //        existed.Images.Remove(pImage);
-        //    }
-        //    TempData["PhotoError"] = "";
-        //    foreach (IFormFile photo in productVM.Photos)
-        //    {
-        //        if (!photo.CheckFileType("image/"))
-        //        {
-        //            TempData["PhotoError"] += $"{photo.FileName} file tipi uygun deyil\t";
-        //            continue;
-        //        }
-        //        if (!photo.CheckFileSize(200))
-        //        {
-        //            TempData["PhotoError"] += $"{photo.FileName} file olcusu uygun deyil\t";
-        //            continue;
-        //        }
-        //        Image addImage = new Image
-        //        {
-        //            Name = "Photos",
-        //            ImgUrl = await photo.CreateFileAsync(_env.WebRootPath, Imageroot),
-        //            IsPrimary = null,
-        //            ProductId = existed.Id
-        //        };
-        //        existed.Images.Add(addImage);
-        //    }
-        //    List<Guid> createList = productVM.TagIds.Where(t => !existed.ProductTags.Any(pt => pt.TagId == t)).ToList();
-        //    if (createList != null && createList.Count > 0)
-        //    {
-        //        foreach (Guid tagId in createList)
-        //        {
-        //            bool tagResult = await _context.Tags.AnyAsync(pt => pt.Id == tagId);
-        //            if (!tagResult)
-        //            {
-        //                ModelState.AddModelError("TagIds", "Bele tag movcud deyil");
-        //                productVM = MapImages(productVM, existed);
-        //                return View(productVM);
-        //            }
-        //            ProductTag productTag = new ProductTag
-        //            {
-        //                ProductId = existed.Id,
-        //                TagId = tagId
-        //            };
-        //            existed.ProductTags.Add(productTag);
-        //        }
-        //        List<ProductTag> removeList = existed.ProductTags.Where(pt => !productVM.TagIds.Contains(pt.TagId)).ToList();
-        //        _context.ProductTags.RemoveRange(removeList);
-        //    }
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
+        [HttpPost]
+        public async Task<IActionResult> Update(Guid? id, UpdateProductVM productVM)
+        {
+            ViewBag.Categories = await _context.Categories.ToListAsync();
+            ViewBag.Tags = await _context.Tags.ToListAsync();
+            ViewBag.Colors = await _context.Colors.ToListAsync();
+            ViewBag.Sizes = await _context.Sizes.ToListAsync();
+            if (id == null) return BadRequest();
+            Product existed = await _context.Products.Where(p => p.Id == id).Include(p => p.ProductTags).Include(p => p.Images).FirstOrDefaultAsync();
+            if (existed is null) return NotFound();
+            productVM = MapImages(productVM, existed);
+            if (!ModelState.IsValid) return View(productVM);
+            if (!await _context.Categories.AnyAsync(c => c.Id == productVM.CategoryId))
+            {
+                ModelState.AddModelError("CategoryId", "Bele bir category yoxdur");
+                return View(productVM);
+            }
+            existed.CategoryId = productVM.CategoryId;
+            if (!await _context.Colors.AnyAsync(c => c.Id == productVM.ColorId))
+            {
+                ModelState.AddModelError("ColorId", "Bele bir reng yoxdur");
+                return View(productVM);
+            }
+            existed.ColorId = productVM.ColorId;
+            if (!await _context.Sizes.AnyAsync(c => c.Id == productVM.SizeId))
+            {
+                ModelState.AddModelError("SizeId", "Bele bir olcu yoxdur");
+                return View(productVM);
+            }
+            existed.SizeId = productVM.SizeId;
+            if (productVM.Price > 0) existed.Price = productVM.Price;
+            if (productVM.Description != null && productVM.Description.Length > 2001) existed.Description = productVM.Description;
+            if (productVM.Name != null && productVM.Name.Length > 50) existed.Name = productVM.Name;
+            if (productVM.SKU != null && productVM.SKU.Length > 201) existed.SKU = productVM.SKU;
+            if (productVM.Count >= 0) existed.Count = productVM.Count;
+            if (productVM.TagIds is null)
+            {
+                ModelState.AddModelError("TagIds", "En azi 1 tag secin");
+                return View(productVM);
+            }
+            if (productVM.MainPhoto != null)
+            {
+                if (!productVM.MainPhoto.CheckFileType("image/"))
+                {
+                    ModelState.AddModelError("MainPhoto", "Sheklin novu uygun deyil");
+                    return View(productVM);
+                }
+                if (!productVM.MainPhoto.CheckFileSize(200))
+                {
+                    ModelState.AddModelError("MainPhoto", "Sheklin olcusu uygun deyil");
+                    return View(productVM);
+                }
+                Image mainImage = existed.Images.FirstOrDefault(pi => pi.IsPrimary == true);
+                if (mainImage != null)
+                {
+                    mainImage.ImgUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRoot);
+                    existed.Images.Remove(mainImage);
+                }
+                Image roomImage = new Image
+                {
+                    Name = "MainPhoto",
+                    ProductId = existed.Id,
+                    ImgUrl = await productVM.MainPhoto.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
+                    IsPrimary = true
+                };
+                existed.Images.Add(roomImage);
+            }
+            if (productVM.HoverPhoto != null)
+            {
+                if (!productVM.HoverPhoto.CheckFileType("image/"))
+                {
+                    ModelState.AddModelError("HoverPhoto", "Sheklin novu uygun deyil");
+                    return View(productVM);
+                }
+                if (!productVM.HoverPhoto.CheckFileSize(200))
+                {
+                    ModelState.AddModelError("HoverPhoto", "Sheklin olcusu uygun deyil");
+                    return View(productVM);
+                }
+                var mainImage = existed.Images.FirstOrDefault(pi => pi.IsPrimary == true);
+                mainImage.ImgUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRoot);
+                existed.Images.Remove(mainImage);
+                Image roomImage = new Image
+                {
+                    Name = "HoverPhoto",
+                    ProductId = existed.Id,
+                    ImgUrl = await productVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
+                    IsPrimary = false
+                };
+                existed.Images.Add(roomImage);
+            }
+            List<Image> removeImageList = existed.Images.Where(pi => !productVM.ImagesIds.Exists(p => p == pi.Id) && pi.IsPrimary == null).ToList();
+            foreach (Image pImage in removeImageList)
+            {
+                pImage.ImgUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRoot);
+                existed.Images.Remove(pImage);
+            }
+            if (productVM.Photos != null && productVM.Photos.Count > 0)
+            {
+                TempData["PhotoError"] = "";
+                foreach (IFormFile photo in productVM.Photos)
+                {
+                    if (!photo.CheckFileType("image/"))
+                    {
+                        TempData["PhotoError"] += $"{photo.FileName} file tipi uygun deyil\t";
+                        continue;
+                    }
+                    if (!photo.CheckFileSize(200))
+                    {
+                        TempData["PhotoError"] += $"{photo.FileName} file olcusu uygun deyil\t";
+                        continue;
+                    }
+                    Image addImage = new Image
+                    {
+                        Name = "Photos",
+                        ImgUrl = await photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
+                        IsPrimary = null,
+                        ProductId = existed.Id
+                    };
+                    existed.Images.Add(addImage);
+                }
+            }
+            List<Guid> createList = productVM.TagIds.Where(t => !existed.ProductTags.Any(pt => pt.TagId == t)).ToList();
+            if (createList != null && createList.Count > 0)
+            {
+                foreach (Guid tagId in createList)
+                {
+                    bool tagResult = await _context.Tags.AnyAsync(pt => pt.Id == tagId);
+                    if (!tagResult)
+                    {
+                        ModelState.AddModelError("TagIds", "Bele tag movcud deyil");
+                        productVM = MapImages(productVM, existed);
+                        return View(productVM);
+                    }
+                    ProductTag productTag = new ProductTag
+                    {
+                        ProductId = existed.Id,
+                        TagId = tagId
+                    };
+                    existed.ProductTags.Add(productTag);
+                }
+                List<ProductTag> removeList = existed.ProductTags.Where(pt => !productVM.TagIds.Contains(pt.TagId)).ToList();
+                _context.ProductTags.RemoveRange(removeList);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id is null) return BadRequest();
@@ -351,13 +355,20 @@ namespace Pronia.Areas.AppAdmin.Controllers
             {
                 foreach (var item in existed.Images)
                 {
-                    item.ImgUrl.DeleteFile(_env.WebRootPath, Imageroot);
+                    item.ImgUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRoot);
                     _context.Images.Remove(item);
                 }
             }
             _context.Products.Remove(existed);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Details(Guid? id)
+        {
+            if (id == null) return BadRequest();
+            Product product = await _context.Products.Where(s => s.Id == id).Include(e => e.Color).Include(p=>p.Category).Include(p=>p.ProductTags).Include(p=>p.ProductInfos).Include(p=>p.Size).FirstOrDefaultAsync();
+            if (product == null) return NotFound();
+            return View(product);
         }
         public UpdateProductVM MapImages(UpdateProductVM productVM, Product product)
         {

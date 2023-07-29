@@ -12,9 +12,10 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore;
 global using Pronia.Areas.AppAdmin.DAL;
 
-//namespace Pronia
-//{
-//	public class GlobalUsing
-//	{
-//	}
-//}
+namespace Pronia
+{
+	public static class GlobalUsing
+	{
+        public static string ImageRoot { get; set; } = @"assets/images/website-images";
+    }
+}

@@ -42,6 +42,10 @@
     <None Remove="Areas\AppAdmin\Views\Size\" />
     <None Remove="Areas\AppAdmin\Views\Tag\" />
     <None Remove="Areas\AppAdmin\Views\Product\" />
+    <None Remove="ViewModels\Position\" />
+    <None Remove="Areas\AppAdmin\Views\Employee\" />
+    <None Remove="Areas\AppAdmin\Views\Position\" />
+    <None Remove="ViewModels\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -80,6 +84,10 @@
     <Folder Include="Areas\AppAdmin\Views\Size\" />
     <Folder Include="Areas\AppAdmin\Views\Tag\" />
     <Folder Include="Areas\AppAdmin\Views\Product\" />
+    <Folder Include="ViewModels\Position\" />
+    <Folder Include="Areas\AppAdmin\Views\Employee\" />
+    <Folder Include="Areas\AppAdmin\Views\Position\" />
+    <Folder Include="ViewModels\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

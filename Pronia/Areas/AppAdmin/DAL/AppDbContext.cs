@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using Pronia.Models;
-
 namespace Pronia.Areas.AppAdmin.DAL
 {
 	public class AppDbContext:IdentityDbContext<AppUser>
@@ -19,6 +16,9 @@ namespace Pronia.Areas.AppAdmin.DAL
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<ProductInfo> ProductInfos { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+
     }
 }
 

@@ -12,7 +12,7 @@ using Pronia.Areas.AppAdmin.DAL;
 namespace Pronia.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230723172116_CreateModels")]
+    [Migration("20230729165453_CreateModels")]
     partial class CreateModels
     {
         /// <inheritdoc />
