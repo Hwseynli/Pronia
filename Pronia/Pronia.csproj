@@ -37,10 +37,11 @@
     <None Remove="ViewModels\Color\" />
     <None Remove="ViewModels\Size\" />
     <None Remove="ViewModels\Product\" />
-    <None Remove="Areas\AppAdmin\Views\Tag\" />
     <None Remove="Areas\AppAdmin\Views\Category\" />
-    <None Remove="Areas\AppAdmin\Views\Size\" />
     <None Remove="Areas\AppAdmin\Views\Color\" />
+    <None Remove="Areas\AppAdmin\Views\Size\" />
+    <None Remove="Areas\AppAdmin\Views\Tag\" />
+    <None Remove="Areas\AppAdmin\Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -74,10 +75,11 @@
     <Folder Include="ViewModels\Color\" />
     <Folder Include="ViewModels\Size\" />
     <Folder Include="ViewModels\Product\" />
-    <Folder Include="Areas\AppAdmin\Views\Tag\" />
     <Folder Include="Areas\AppAdmin\Views\Category\" />
-    <Folder Include="Areas\AppAdmin\Views\Size\" />
     <Folder Include="Areas\AppAdmin\Views\Color\" />
+    <Folder Include="Areas\AppAdmin\Views\Size\" />
+    <Folder Include="Areas\AppAdmin\Views\Tag\" />
+    <Folder Include="Areas\AppAdmin\Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
