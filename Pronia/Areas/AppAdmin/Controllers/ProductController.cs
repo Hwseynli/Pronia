@@ -19,6 +19,7 @@
                 .Include(p => p.Images
                 .Where(pi => pi.IsPrimary == true))
                 .Include(p => p.Category)
+                .Include(p => p.SKU)
                 .Include(p => p.Color)
                 .Include(p => p.Size)
                 .Include(p => p.ProductTags)
@@ -33,6 +34,7 @@
             ViewBag.Tags = await _context.Tags.ToListAsync();
             ViewBag.Colors = await _context.Colors.ToListAsync();
             ViewBag.Sizes = await _context.Sizes.ToListAsync();
+            ViewBag.Skus = await _context.Skus.ToListAsync();
             return View();
         }
         [HttpPost]
@@ -41,6 +43,7 @@
             ViewBag.Categories = await _context.Categories.ToListAsync();
             ViewBag.Tags = await _context.Tags.ToListAsync();
             ViewBag.Colors = await _context.Colors.ToListAsync();
+            ViewBag.Skus = await _context.Skus.ToListAsync();
             ViewBag.Sizes = await _context.Sizes.ToListAsync();
             if (!ModelState.IsValid)
             {
@@ -56,6 +59,12 @@
             if (!resultcol)
             {
                 ModelState.AddModelError("ColorId", "Bu id-li reng movcud deyil");
+                return View();
+            }
+            bool resultsku = await _context.Skus.AnyAsync(c => c.Id == productVM.SkuId);
+            if (!resultsku)
+            {
+                ModelState.AddModelError("SkuId", "Bu id-li sku movcud deyil");
                 return View();
             }
             bool resultsize = await _context.Sizes.AnyAsync(c => c.Id == productVM.SizeId);
@@ -75,7 +84,7 @@
                 Description = productVM.Description,
                 Price = productVM.Price,
                 Count=productVM.Count,
-                SKU = productVM.SKU,
+                SkuId = productVM.SkuId,
                 CategoryId = productVM.CategoryId,
                 ColorId=productVM.ColorId,
                 SizeId =productVM.SizeId,
@@ -180,6 +189,7 @@
             ViewBag.Categories = await _context.Categories.ToListAsync();
             ViewBag.Tags = await _context.Tags.ToListAsync();
             ViewBag.Colors = await _context.Colors.ToListAsync();
+            ViewBag.Skus = await _context.Skus.ToListAsync();
             ViewBag.Sizes = await _context.Sizes.ToListAsync();
             if (id == null) return BadRequest();
             Product product = await _context.Products.Where(p => p.Id == id).Include(p => p.Images).Include(p => p.ProductTags).FirstOrDefaultAsync();
@@ -188,7 +198,7 @@
             {
                 Name = product.Name,
                 Description = product.Description,
-                SKU = product.SKU,
+                SkuId = product.SkuId,
                 Count=product.Count,
                 Price = product.Price,
                 CategoryId = product.CategoryId,
@@ -205,6 +215,7 @@
             ViewBag.Categories = await _context.Categories.ToListAsync();
             ViewBag.Tags = await _context.Tags.ToListAsync();
             ViewBag.Colors = await _context.Colors.ToListAsync();
+            ViewBag.Skus = await _context.Skus.ToListAsync();
             ViewBag.Sizes = await _context.Sizes.ToListAsync();
             if (id == null) return BadRequest();
             Product existed = await _context.Products.Where(p => p.Id == id).Include(p => p.ProductTags).Include(p => p.Images).FirstOrDefaultAsync();
@@ -223,6 +234,12 @@
                 return View(productVM);
             }
             existed.ColorId = productVM.ColorId;
+            if (!await _context.Skus.AnyAsync(c => c.Id == productVM.SkuId))
+            {
+                ModelState.AddModelError("SkuId", "Bele bir sku yoxdur");
+                return View(productVM);
+            }
+            existed.SkuId = productVM.SkuId;
             if (!await _context.Sizes.AnyAsync(c => c.Id == productVM.SizeId))
             {
                 ModelState.AddModelError("SizeId", "Bele bir olcu yoxdur");
@@ -232,7 +249,6 @@
             if (productVM.Price > 0) existed.Price = productVM.Price;
             if (productVM.Description != null && productVM.Description.Length > 2001) existed.Description = productVM.Description;
             if (productVM.Name != null && productVM.Name.Length > 50) existed.Name = productVM.Name;
-            if (productVM.SKU != null && productVM.SKU.Length > 201) existed.SKU = productVM.SKU;
             if (productVM.Count >= 0) existed.Count = productVM.Count;
             if (productVM.TagIds is null)
             {
@@ -366,7 +382,7 @@
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null) return BadRequest();
-            Product product = await _context.Products.Where(s => s.Id == id).Include(e => e.Color).Include(p=>p.Category).Include(p=>p.ProductTags).Include(p=>p.ProductInfos).Include(p=>p.Size).FirstOrDefaultAsync();
+            Product product = await _context.Products.Where(s => s.Id == id).Include(e => e.Color).Include(p=>p.Category).Include(p=>p.SKU).Include(p=>p.ProductTags).Include(p=>p.ProductInfos).Include(p=>p.Size).FirstOrDefaultAsync();
             if (product == null) return NotFound();
             return View(product);
         }

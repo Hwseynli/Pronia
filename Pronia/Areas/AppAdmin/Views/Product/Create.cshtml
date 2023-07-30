@@ -44,11 +44,12 @@
                                     <span class="text-danger" asp-validation-for="Price"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="SKU">SKU</label>
-                                    <input asp-for="SKU" class="form-control" placeholder="SKU">
-                                    <span class="text-danger" asp-validation-for="SKU"></span>
+                                    <label asp-for="SkuId">Sku</label>
+                                    <select asp-for="SkuId" class="form-control" asp-items="new SelectList(ViewBag.Skus,nameof(Sku.Id),nameof(Sku.Name))">
+                                        <option disabled selected>Select Sku please</option>
+                                    </select>
+                                    <span class="text-danger" asp-validation-for="SkuId"></span>
                                 </div>
-
                                 <div class="form-group">
                                     <label asp-for="CategoryId">Category</label>
                                     <select asp-for="CategoryId" class="form-control" asp-items="new SelectList(ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))">

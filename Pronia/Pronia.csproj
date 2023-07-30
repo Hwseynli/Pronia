@@ -46,6 +46,8 @@
     <None Remove="Areas\AppAdmin\Views\Employee\" />
     <None Remove="Areas\AppAdmin\Views\Position\" />
     <None Remove="ViewModels\Employee\" />
+    <None Remove="ViewModels\Sku\" />
+    <None Remove="Areas\AppAdmin\Views\Sku\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -88,11 +90,15 @@
     <Folder Include="Areas\AppAdmin\Views\Employee\" />
     <Folder Include="Areas\AppAdmin\Views\Position\" />
     <Folder Include="ViewModels\Employee\" />
+    <Folder Include="wwwroot\assets\images\website-images\ex\" />
+    <Folder Include="ViewModels\Sku\" />
+    <Folder Include="Areas\AppAdmin\Views\Sku\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\admin\" />
     <Content Remove="wwwroot\assets\" />
+    <Content Remove="wwwroot\assets\images\website-images\ex\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9">

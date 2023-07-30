@@ -8,8 +8,10 @@
 		public decimal Price { get; set; }
 		[Required]
 		public int Count { get; set; }
-		[Required,StringLength(500)]
-		public string SKU { get; set; }
+		[Required]
+		public Guid SkuId { get; set; }
+		[ForeignKey("SkuId")]
+		public Sku SKU { get; set; }
 		public ICollection<ProductInfo> ProductInfos{ get; set; }
 		public ICollection<ProductTag> ProductTags { get; set; }
         public ICollection<Image> Images { get; set; }

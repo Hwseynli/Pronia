@@ -8,8 +8,7 @@
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Count { get; set; }
-        [StringLength(200)]
-        public string SKU { get; set; }
+        public Guid SkuId { get; set; }
         public Guid CategoryId { get; set; }
         public Guid ColorId { get; set; }
         public Guid SizeId { get; set; }

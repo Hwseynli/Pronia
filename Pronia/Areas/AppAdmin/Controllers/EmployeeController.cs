@@ -1,6 +1,6 @@
 ﻿namespace Pronia.Areas.AppAdmin.Controllers
 {
-    [Area("ProniaAdmin")]
+    [Area("AppAdmin")]
     [AutoValidateAntiforgeryToken]
     public class EmployeeController : Controller
     {

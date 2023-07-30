@@ -14,6 +14,7 @@ namespace Pronia.Areas.AppAdmin.DAL
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Size> Sizes { get; set; }
+        public DbSet<Sku> Skus { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<ProductInfo> ProductInfos { get; set; }
         public DbSet<Position> Positions { get; set; }

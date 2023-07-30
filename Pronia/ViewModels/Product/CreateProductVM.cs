@@ -12,7 +12,7 @@
         [Required]
         public int Count { get; set; }
         [Required, StringLength(200)]
-        public string SKU { get; set; }
+        public Guid SkuId { get; set; }
         [Required]
         public Guid CategoryId { get; set; }
         [ForeignKey("CategoryId")]

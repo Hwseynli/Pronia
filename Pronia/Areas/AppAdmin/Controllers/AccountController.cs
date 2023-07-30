@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Pronia.Utilities.Enums;
 namespace Pronia.Areas.AppAdmin.Controllers
 {
@@ -82,15 +83,14 @@ namespace Pronia.Areas.AppAdmin.Controllers
                 }
                 return View();
             }
-            AppUser user1 = await _userManager.Users.FirstOrDefaultAsync();
-            if (user1==null)
+             
+            if (!await _userManager.Users.AnyAsync())
             {
                 await _userManager.AddToRoleAsync(user, UserRole.Admin.ToString());
             }
             else
             {
                 await _userManager.AddToRoleAsync(user, UserRole.Costumer.ToString());
-
             }
             await _signInManager.SignInAsync(user, false);
             if (ReturnUrl is null)
