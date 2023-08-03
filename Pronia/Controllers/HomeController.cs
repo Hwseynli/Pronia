@@ -15,6 +15,7 @@ public class HomeController : Controller
     {
         HomeVM homeVM = new HomeVM
         {
+            Employees=await _context.Employees.Where(e=>e.Position.Name=="Customer").Take(3).Include(e=>e.Position).ToListAsync(),
             Sliders = await _context.Sliders.OrderBy(s=>s.Order).ToListAsync(),
             Products = await _context.Products.Include(p => p.Images).Include(p => p.Category).ToListAsync(),
         };

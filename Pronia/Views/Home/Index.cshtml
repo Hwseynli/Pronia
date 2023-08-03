@@ -1705,60 +1705,33 @@
         <div class="container custom-space">
             <div class="swiper-container testimonial-slider with-bg">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide testimonial-item">
-                        <div class="user-info mb-3">
-                            <div class="user-shape-wrap">
-                                <div class="user-img">
-                                    <img src="~/assets/images/website-images//1--1rnu4p.png"
-                                         alt="User Image" />
+                    @foreach (var item in Model.Employees.Take(3))
+                    {
+                        <div class="swiper-slide testimonial-item">
+                            <div class="user-info mb-3">
+                                <div class="user-shape-wrap">
+                                    <div class="user-img">
+                                        <img src="~/assets/images/website-images/users/@item.ImageUrl"
+                                             alt="User Image" />
+                                    </div>
+                                </div>
+                                <div class="user-content text-charcoal">
+                                    <h4 class="user-name mb-1">@item.Name @item.Surname</h4>
+                                    <span class="user-occupation">@item.Position.Name</span>
                                 </div>
                             </div>
-                            <div class="user-content text-charcoal">
-                                <h4 class="user-name mb-1">Phoenix Baker</h4>
-                                <span class="user-occupation">Client</span>
-                            </div>
+                            <p class="user-comment mb-6">
+                                @if (item.Description.Length > 200)
+                                    {
+                                @item.Description.Substring(0, 200);
+                                    }
+                                    else
+                                    {
+                                        @item.Description;
+                                    }
+                            </p>
                         </div>
-                        <p class="user-comment mb-6">
-                            Lorem ipsum dolor sit amet, conse adipisic elit, sed do
-                            eiusmod tempo incididunt ut labore et dolore. magna
-                        </p>
-                    </div>
-                    <div class="swiper-slide testimonial-item">
-                        <div class="user-info mb-3">
-                            <div class="user-shape-wrap">
-                                <div class="user-img">
-                                    <img src="~/assets/images/website-images//2.png"
-                                         alt="User Image" />
-                                </div>
-                            </div>
-                            <div class="user-content text-charcoal">
-                                <h4 class="user-name mb-1">Phoenix Baker</h4>
-                                <span class="user-occupation">Client</span>
-                            </div>
-                        </div>
-                        <p class="user-comment mb-6">
-                            Lorem ipsum dolor sit amet, conse adipisic elit, sed do
-                            eiusmod tempo incididunt ut labore et dolore. magna
-                        </p>
-                    </div>
-                    <div class="swiper-slide testimonial-item">
-                        <div class="user-info mb-3">
-                            <div class="user-shape-wrap">
-                                <div class="user-img">
-                                    <img src="~/assets/images/website-images//3.png"
-                                         alt="User Image" />
-                                </div>
-                            </div>
-                            <div class="user-content text-charcoal">
-                                <h4 class="user-name mb-1">Phoenix Baker</h4>
-                                <span class="user-occupation">Client</span>
-                            </div>
-                        </div>
-                        <p class="user-comment mb-6">
-                            Lorem ipsum dolor sit amet, conse adipisic elit, sed do
-                            eiusmod tempo incididunt ut labore et dolore. magna
-                        </p>
-                    </div>
+                    }
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination without-absolute"></div>

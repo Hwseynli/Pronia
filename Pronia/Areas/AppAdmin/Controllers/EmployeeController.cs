@@ -47,7 +47,7 @@
             {
                 Name = employee.Name.Capitalize(),
                 Surname = employee.Surname.Capitalize(),
-                Description=employee.Surname.Trim(),
+                Description=employee.Description.Trim(),
                 PositionId = employee.PositionId
             };
             if (employee.Photo != null)
