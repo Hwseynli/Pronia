@@ -1321,10 +1321,6 @@
       "PackagePath": "staticwebassets/assets/images/website-images/1.png"
     },
     {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/1dbba616-2b6e-4468-ab72-29f306c2fbdd83c19c12-6863-4d5a-b7ff-5e6045eed8061-2-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/1dbba616-2b6e-4468-ab72-29f306c2fbdd83c19c12-6863-4d5a-b7ff-5e6045eed8061-2-270x300.jpg"
-    },
-    {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/2-1-370x270.webp",
       "PackagePath": "staticwebassets/assets/images/website-images/2-1-370x270.webp"
     },
@@ -1349,24 +1345,12 @@
       "PackagePath": "staticwebassets/assets/images/website-images/2.png"
     },
     {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/268d9134-1ced-497b-9a55-ac1254d760da1-5-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/268d9134-1ced-497b-9a55-ac1254d760da1-5-270x300.jpg"
-    },
-    {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/2be0229f-b1e7-45ab-94f6-65c9f19334712-3-70x78.png",
       "PackagePath": "staticwebassets/assets/images/website-images/2be0229f-b1e7-45ab-94f6-65c9f19334712-3-70x78.png"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/3.png",
       "PackagePath": "staticwebassets/assets/images/website-images/3.png"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/3284f388-3fc7-49ee-b53c-4a56335b8a431-3-570x633.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/3284f388-3fc7-49ee-b53c-4a56335b8a431-3-570x633.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/32d30e7a-26de-4c6a-beca-5413e7dec3b11-7-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/32d30e7a-26de-4c6a-beca-5413e7dec3b11-7-270x300.jpg"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/38f29465-3495-43de-9ef8-4636964199ff1-1-524x617.png",
@@ -1377,44 +1361,8 @@
       "PackagePath": "staticwebassets/assets/images/website-images/5b977074-217d-4a36-aff9-3fb9b369b8611-2-524x617.png"
     },
     {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/78c539c7-7256-4f0f-970e-915249c05e381-7-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/78c539c7-7256-4f0f-970e-915249c05e381-7-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/83c19c12-6863-4d5a-b7ff-5e6045eed8061-2-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/83c19c12-6863-4d5a-b7ff-5e6045eed8061-2-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/88dd539c-4a22-41a0-b7e3-27c89c0ba3771-11-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/88dd539c-4a22-41a0-b7e3-27c89c0ba3771-11-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/8fe9d81b-dc7b-4d0b-8b97-f1af2f3b02321-10-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/8fe9d81b-dc7b-4d0b-8b97-f1af2f3b02321-10-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/929515a8-cddf-434a-ab68-a5720a4275151-3-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/929515a8-cddf-434a-ab68-a5720a4275151-3-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/9a3fd8dd-cfad-4e05-a6f6-9e672fd2d32a1-7-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/9a3fd8dd-cfad-4e05-a6f6-9e672fd2d32a1-7-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/9c9159fb-b6fd-4e1a-bff2-f1d124aeed3d268d9134-1ced-497b-9a55-ac1254d760da1-5-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/9c9159fb-b6fd-4e1a-bff2-f1d124aeed3d268d9134-1ced-497b-9a55-ac1254d760da1-5-270x300.jpg"
-    },
-    {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/a9617037-027a-494b-8756-88b285de8b6c1-3-370x300.jpg",
       "PackagePath": "staticwebassets/assets/images/website-images/a9617037-027a-494b-8756-88b285de8b6c1-3-370x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/b72d19c4-eb24-41b1-ba84-6b68df7c3db61-7-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/b72d19c4-eb24-41b1-ba84-6b68df7c3db61-7-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/ca131c67-a18e-4296-a01a-522435e693211-11-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/ca131c67-a18e-4296-a01a-522435e693211-11-270x300.jpg"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/car.png",
@@ -1427,14 +1375,6 @@
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/dark.png",
       "PackagePath": "staticwebassets/assets/images/website-images/dark.png"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/db554107-1891-41cc-b567-ca637c98e99b1-9-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/db554107-1891-41cc-b567-ca637c98e99b1-9-270x300.jpg"
-    },
-    {
-      "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/fe6f0b9c-e75f-4cbc-bbfc-3c8034b184f278c539c7-7256-4f0f-970e-915249c05e381-7-270x300.jpg",
-      "PackagePath": "staticwebassets/assets/images/website-images/fe6f0b9c-e75f-4cbc-bbfc-3c8034b184f278c539c7-7256-4f0f-970e-915249c05e381-7-270x300.jpg"
     },
     {
       "Id": "/Users/zeyneb/Projects/Pronia/Pronia/wwwroot/assets/images/website-images/quotation.png",

@@ -6,6 +6,8 @@
         public string Name { get; set; }
         [Required, MinLength(3), MaxLength(40)]
         public string Surname { get; set; }
+        [Required, MinLength(3), MaxLength(500)]
+        public string Description { get; set; }
         [Required]
         public Guid PositionId { get; set; }
         [Required]

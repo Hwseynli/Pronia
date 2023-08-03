@@ -78,6 +78,7 @@
             }
             Product product = new Product
             {
+                CreateOn=DateTime.Now,
                 Name = productVM.Name,
                 Description = productVM.Description,
                 Price = productVM.Price,
@@ -360,6 +361,7 @@
                 List<ProductTag> removeList = existed.ProductTags.Where(pt => !productVM.TagIds.Contains(pt.TagId)).ToList();
                 _context.ProductTags.RemoveRange(removeList);
             }
+            existed.UpdateOn = DateTime.Now;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

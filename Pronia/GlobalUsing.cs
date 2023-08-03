@@ -15,6 +15,7 @@ namespace Pronia
 {
 	public static class GlobalUsing
 	{
+        public static string ImageRootUser { get; set; } = @"assets/images/website-images/users";
         public static string ImageRoot { get; set; } = @"assets/images/website-images";
     }
 }

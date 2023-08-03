@@ -90,15 +90,15 @@
     <Folder Include="Areas\AppAdmin\Views\Employee\" />
     <Folder Include="Areas\AppAdmin\Views\Position\" />
     <Folder Include="ViewModels\Employee\" />
-    <Folder Include="wwwroot\assets\images\website-images\ex\" />
     <Folder Include="ViewModels\Sku\" />
     <Folder Include="Areas\AppAdmin\Views\Sku\" />
+    <Folder Include="wwwroot\assets\images\website-images\users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\admin\" />
     <Content Remove="wwwroot\assets\" />
-    <Content Remove="wwwroot\assets\images\website-images\ex\" />
+    <Content Remove="wwwroot\assets\images\website-images\users\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9">

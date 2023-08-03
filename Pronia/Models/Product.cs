@@ -8,7 +8,9 @@
 		public decimal Price { get; set; }
 		[Required]
 		public int Count { get; set; }
-		[Required]
+		public DateTime? CreateOn { get; set; }
+        public DateTime? UpdateOn { get; set; }
+        [Required]
 		public Guid SkuId { get; set; }
 		[ForeignKey("SkuId")]
 		public Sku SKU { get; set; }

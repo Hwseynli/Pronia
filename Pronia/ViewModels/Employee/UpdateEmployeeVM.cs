@@ -7,6 +7,8 @@
         public string ImageUrl { get; set; }
         [StringLength(40)]
         public string Surname { get; set; }
+        [StringLength(500)]
+        public string Description { get; set; }
         public Guid PositionId { get; set; }
         public IFormFile Photo { get; set; }
     }

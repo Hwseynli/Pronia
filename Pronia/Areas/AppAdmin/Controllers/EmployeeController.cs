@@ -47,6 +47,7 @@
             {
                 Name = employee.Name.Capitalize(),
                 Surname = employee.Surname.Capitalize(),
+                Description=employee.Surname.Trim(),
                 PositionId = employee.PositionId
             };
             if (employee.Photo != null)
@@ -61,7 +62,7 @@
                     ModelState.AddModelError("Photo", "Gonderilen file-nin hecmi 200 kb-den boyuk olmamalidir");
                     return View();
                 }
-                employee1.ImageUrl = await employee.Photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot);
+                employee1.ImageUrl = await employee.Photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRootUser);
             }
             await _context.Employees.AddAsync(employee1);
             await _context.SaveChangesAsync();
@@ -78,6 +79,7 @@
                 Name = existed.Name,
                 ImageUrl = existed.ImageUrl,
                 Surname = existed.Surname,
+                Description=existed.Description,
                 PositionId = existed.PositionId
             };
             return View(employeeVM);
@@ -101,6 +103,7 @@
                 existed.PositionId = employee.PositionId;
             }
             if(employee.Name!=null && employee.Name.Capitalize!=null )existed.Name = employee.Name.Capitalize();
+            if (employee.Description != null&& employee.Description.Trim().Length>0) existed.Description = employee.Description.Trim();
             if (employee.Surname!= null && employee.Surname.Capitalize()!=null) existed.Surname = employee.Surname.Capitalize();
             if (employee.Photo != null)
             {
@@ -114,8 +117,8 @@
                     ModelState.AddModelError("Photo", "File hecmi 200 kb den cox olmamalidir");
                     return View();
                 }
-                existed.ImageUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRoot);
-                existed.ImageUrl = await employee.Photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot);
+                existed.ImageUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRootUser);
+                existed.ImageUrl = await employee.Photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRootUser);
             }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -125,7 +128,7 @@
             if (id is null) return BadRequest();
             Employee employee = await _context.Employees.FirstOrDefaultAsync(s => s.Id == id);
             if (employee is null) return NotFound();
-            employee.ImageUrl.DeleteFile(_env.WebRootPath,GlobalUsing.ImageRoot);
+            employee.ImageUrl.DeleteFile(_env.WebRootPath,GlobalUsing.ImageRootUser);
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
