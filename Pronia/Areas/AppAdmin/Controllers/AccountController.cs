@@ -53,44 +53,33 @@ namespace Pronia.Areas.AppAdmin.Controllers
                 UserName = newuser.Username.Capitalize(),
                 Email=newuser.Email
             };
-
-            if (newuser.Age < 0) return View();
-            user.Age = newuser.Age;
-            if (newuser.Gender == "Male" || newuser.Gender == "Female" || newuser.Gender == "Other")
+            if (await _userManager.Users.AnyAsync())
             {
-                user.Gender = newuser.Gender;
-            }
-            if (newuser.UserPhoto != null)
-            {
-                if (!newuser.UserPhoto.CheckFileType("image/"))
+                RegistrPart(newuser, user, _env, _userManager);
+                var result = await _userManager.CreateAsync(user, newuser.Password);
+                if (!result.Succeeded)
                 {
-                    ModelState.AddModelError("Photo", "Gonderilen file-nin tipi uygun deyil");
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, item.Description);
+                    }
                     return View();
                 }
-                if (!newuser.UserPhoto.CheckFileSize(20000))
-                {
-                    ModelState.AddModelError("Photo", "Gonderilen file-nin hecmi 20000 kb-den boyuk olmamalidir");
-                    return View();
-                }
-                user.UserImgUrl = await newuser.UserPhoto.CreateFileAsync(_env.WebRootPath, fileaddress);
-            }
-            var result = await _userManager.CreateAsync(user, newuser.Password);
-            if (!result.Succeeded)
-            {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, item.Description);
-                }
-                return View();
-            }
-             
-            if (!await _userManager.Users.AnyAsync())
-            {
-                await _userManager.AddToRoleAsync(user, UserRole.Admin.ToString());
+                await _userManager.AddToRoleAsync(user, UserRole.Costumer.ToString());
             }
             else
             {
-                await _userManager.AddToRoleAsync(user, UserRole.Costumer.ToString());
+                RegistrPart(newuser,user,_env,_userManager);
+                var result = await _userManager.CreateAsync(user, newuser.Password);
+                if (!result.Succeeded)
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, item.Description);
+                    }
+                    return View();
+                }
+                await _userManager.AddToRoleAsync(user, UserRole.Admin.ToString());
             }
             await _signInManager.SignInAsync(user, false);
             if (ReturnUrl is null)
@@ -161,9 +150,33 @@ namespace Pronia.Areas.AppAdmin.Controllers
                     { Name = role.ToString() });
                 }
             }
-            return RedirectToAction(nameof(Index), "Home");
+            return RedirectToAction("Index","Home",new { area = "" });
         }
 
+        public async void RegistrPart(RegistrVM newuser, AppUser user, IWebHostEnvironment _env, UserManager<AppUser> _userManager)
+        {
+            if (newuser.Age < 0)  View();
+            user.Age = newuser.Age;
+            if (newuser.Gender == "Male" || newuser.Gender == "Female" || newuser.Gender == "Other")
+            {
+                user.Gender = newuser.Gender;
+            }
+            if (newuser.UserPhoto != null)
+            {
+                if (!newuser.UserPhoto.CheckFileType("image/"))
+                {
+                    ModelState.AddModelError("Photo", "Gonderilen file-nin tipi uygun deyil");
+                     View();
+                }
+                if (!newuser.UserPhoto.CheckFileSize(20000))
+                {
+                    ModelState.AddModelError("Photo", "Gonderilen file-nin hecmi 20000 kb-den boyuk olmamalidir");
+                     View();
+                }
+                user.UserImgUrl = await newuser.UserPhoto.CreateFileAsync(_env.WebRootPath, fileaddress);
+            }
+           
+        }
     }
 }
 

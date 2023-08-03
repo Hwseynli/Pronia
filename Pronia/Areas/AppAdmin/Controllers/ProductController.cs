@@ -4,7 +4,6 @@
     [AutoValidateAntiforgeryToken]
     public class ProductController : Controller
     {
-        //public string Imageroot { get; set; } = @"assets/images/website-images";
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
         public ProductController(AppDbContext context, IWebHostEnvironment env)
@@ -16,16 +15,15 @@
         public async Task<IActionResult> Index()
         {
             List<Product> products = await _context.Products
-                .Include(p => p.Images
-                .Where(pi => pi.IsPrimary == true))
-                .Include(p => p.Category)
-                .Include(p => p.SKU)
-                .Include(p => p.Color)
-                .Include(p => p.Size)
-                .Include(p => p.ProductTags)
-                .ThenInclude(pt => pt.Tag)
-                .ToListAsync();
-
+               .Include(p => p.Images
+               .Where(pi => pi.IsPrimary == true))
+               .Include(p => p.Category)
+               .Include(p => p.SKU)
+               .Include(p => p.Color)
+               .Include(p => p.Size)
+               .Include(p => p.ProductTags)
+               .ThenInclude(pt => pt.Tag)
+               .ToListAsync();
             return View(products);
         }
         public async Task<IActionResult> Create()
@@ -40,15 +38,15 @@
         [HttpPost]
         public async Task<IActionResult> Create(CreateProductVM productVM)
         {
-            ViewBag.Categories = await _context.Categories.ToListAsync();
-            ViewBag.Tags = await _context.Tags.ToListAsync();
-            ViewBag.Colors = await _context.Colors.ToListAsync();
-            ViewBag.Skus = await _context.Skus.ToListAsync();
-            ViewBag.Sizes = await _context.Sizes.ToListAsync();
             if (!ModelState.IsValid)
             {
                 return View();
             }
+            ViewBag.Categories = await _context.Categories.ToListAsync();
+            ViewBag.Tags = await _context.Tags.ToListAsync();
+            ViewBag.Colors = await _context.Colors.ToListAsync();
+            ViewBag.Sizes = await _context.Sizes.ToListAsync();
+            ViewBag.Skus = await _context.Skus.ToListAsync();
             bool result = await _context.Categories.AnyAsync(c => c.Id == productVM.CategoryId);
             if (!result)
             {
@@ -83,11 +81,11 @@
                 Name = productVM.Name,
                 Description = productVM.Description,
                 Price = productVM.Price,
-                Count=productVM.Count,
+                Count = productVM.Count,
                 SkuId = productVM.SkuId,
                 CategoryId = productVM.CategoryId,
-                ColorId=productVM.ColorId,
-                SizeId =productVM.SizeId,
+                ColorId = productVM.ColorId,
+                SizeId = productVM.SizeId,
                 ProductTags = new List<ProductTag>(),
                 Images = new List<Image>()
             };
@@ -123,7 +121,7 @@
                 }
                 Image mainImage = new Image
                 {
-                    Name="ProductPhoto",
+                    Name = "ProductPhoto",
                     ImgUrl = await productVM.MainPhoto.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
                     IsPrimary = true,
                     Product = product
@@ -144,7 +142,7 @@
                 }
                 Image hoverImage = new Image
                 {
-                    Name="ProductPhoto",
+                    Name = "ProductPhoto",
                     ImgUrl = await productVM.HoverPhoto.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
                     IsPrimary = false,
                     Product = product
@@ -170,7 +168,7 @@
                         }
                         Image addImage = new Image
                         {
-                            Name="ProductPhotos",
+                            Name = "ProductPhotos",
                             ImgUrl = await photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
                             IsPrimary = null,
                             Product = product
@@ -182,44 +180,43 @@
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
         }
         public async Task<IActionResult> Update(Guid? id)
         {
+            if (id == null) return BadRequest();
+            Product product = await _context.Products.Where(p => p.Id == id).Include(p => p.Images).Include(p => p.ProductTags).FirstOrDefaultAsync();
+            if (product is null) return NotFound();
             ViewBag.Categories = await _context.Categories.ToListAsync();
             ViewBag.Tags = await _context.Tags.ToListAsync();
             ViewBag.Colors = await _context.Colors.ToListAsync();
             ViewBag.Skus = await _context.Skus.ToListAsync();
             ViewBag.Sizes = await _context.Sizes.ToListAsync();
-            if (id == null) return BadRequest();
-            Product product = await _context.Products.Where(p => p.Id == id).Include(p => p.Images).Include(p => p.ProductTags).FirstOrDefaultAsync();
-            if (product is null) return NotFound();
             UpdateProductVM productVM = new UpdateProductVM
             {
                 Name = product.Name,
                 Description = product.Description,
                 SkuId = product.SkuId,
-                Count=product.Count,
+                Count = product.Count,
                 Price = product.Price,
                 CategoryId = product.CategoryId,
-                ColorId=product.ColorId,
-                SizeId=product.SizeId,
+                ColorId = product.ColorId,
+                SizeId = product.SizeId,
                 TagIds = product.ProductTags.Select(pt => pt.TagId).ToList(),
             };
             productVM = MapImages(productVM, product);
             return View(productVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Update(Guid? id, UpdateProductVM productVM)
+        public async Task<IActionResult> Update(Guid? id,UpdateProductVM productVM)
         {
+            if (id == null) return BadRequest();
+            Product existed = await _context.Products.Where(p => p.Id == id).Include(p => p.Images).Include(p => p.ProductTags).Include(p=>p.Color).Include(p => p.Category).Include(p => p.Size).Include(p => p.SKU).FirstOrDefaultAsync();
+            if (existed is null) return NotFound();
             ViewBag.Categories = await _context.Categories.ToListAsync();
             ViewBag.Tags = await _context.Tags.ToListAsync();
             ViewBag.Colors = await _context.Colors.ToListAsync();
             ViewBag.Skus = await _context.Skus.ToListAsync();
             ViewBag.Sizes = await _context.Sizes.ToListAsync();
-            if (id == null) return BadRequest();
-            Product existed = await _context.Products.Where(p => p.Id == id).Include(p => p.ProductTags).Include(p => p.Images).FirstOrDefaultAsync();
-            if (existed is null) return NotFound();
             productVM = MapImages(productVM, existed);
             if (!ModelState.IsValid) return View(productVM);
             if (!await _context.Categories.AnyAsync(c => c.Id == productVM.CategoryId))
@@ -262,7 +259,7 @@
                     ModelState.AddModelError("MainPhoto", "Sheklin novu uygun deyil");
                     return View(productVM);
                 }
-                if (!productVM.MainPhoto.CheckFileSize(200))
+                if (!productVM.MainPhoto.CheckFileSize(2000))
                 {
                     ModelState.AddModelError("MainPhoto", "Sheklin olcusu uygun deyil");
                     return View(productVM);
@@ -306,35 +303,39 @@
                 };
                 existed.Images.Add(roomImage);
             }
-            List<Image> removeImageList = existed.Images.Where(pi => !productVM.ImagesIds.Exists(p => p == pi.Id) && pi.IsPrimary == null).ToList();
-            foreach (Image pImage in removeImageList)
+            if (existed.Images != null && existed.Images.Count > 0)
             {
-                pImage.ImgUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRoot);
-                existed.Images.Remove(pImage);
-            }
-            if (productVM.Photos != null && productVM.Photos.Count > 0)
-            {
-                TempData["PhotoError"] = "";
-                foreach (IFormFile photo in productVM.Photos)
+                    List<Image> removeImageList = existed.Images.Where(pi => !productVM.ImagesIds.Contains(pi.Id) && pi.IsPrimary == null).ToList();
+                    foreach (Image pImage in removeImageList)
+                    {
+                        pImage.ImgUrl.DeleteFile(_env.WebRootPath, GlobalUsing.ImageRoot);
+                        existed.Images.Remove(pImage);
+                    }
+                if (productVM.Photos != null && productVM.Photos.Count > 0)
                 {
-                    if (!photo.CheckFileType("image/"))
+                    TempData["PhotoError"] = "";
+                    foreach (IFormFile photo in productVM.Photos)
                     {
-                        TempData["PhotoError"] += $"{photo.FileName} file tipi uygun deyil\t";
-                        continue;
+                        if (!photo.CheckFileType("image/"))
+                        {
+                            TempData["PhotoError"] += $"{photo.FileName} file tipi uygun deyil\t";
+                            continue;
+                        }
+                        if (!photo.CheckFileSize(2000))
+                        {
+                            TempData["PhotoError"] += $"{photo.FileName} file olcusu uygun deyil\t";
+                            continue;
+                        }
+                        Image addImage = new Image
+                        {
+                            Name = "Exist picture",
+                            ImgUrl = await photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
+                            IsPrimary = null,
+                            ProductId = existed.Id
+                        };
+
+                        existed.Images.Add(addImage);
                     }
-                    if (!photo.CheckFileSize(200))
-                    {
-                        TempData["PhotoError"] += $"{photo.FileName} file olcusu uygun deyil\t";
-                        continue;
-                    }
-                    Image addImage = new Image
-                    {
-                        Name = "Photos",
-                        ImgUrl = await photo.CreateFileAsync(_env.WebRootPath, GlobalUsing.ImageRoot),
-                        IsPrimary = null,
-                        ProductId = existed.Id
-                    };
-                    existed.Images.Add(addImage);
                 }
             }
             List<Guid> createList = productVM.TagIds.Where(t => !existed.ProductTags.Any(pt => pt.TagId == t)).ToList();
@@ -382,7 +383,7 @@
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null) return BadRequest();
-            Product product = await _context.Products.Where(s => s.Id == id).Include(e => e.Color).Include(p=>p.Category).Include(p=>p.SKU).Include(p=>p.ProductTags).Include(p=>p.ProductInfos).Include(p=>p.Size).FirstOrDefaultAsync();
+            Product product = await _context.Products.Where(s => s.Id == id).Include(e => e.Color).Include(p => p.Category).Include(p => p.SKU).Include(p => p.ProductTags).Include(p => p.ProductInfos).Include(p => p.Size).FirstOrDefaultAsync();
             if (product == null) return NotFound();
             return View(product);
         }
@@ -394,7 +395,7 @@
                 ImageVM imageVM = new ImageVM
                 {
                     Id = image.Id,
-                    Name=image.Name,
+                    Name = image.Name,
                     ImageUrl = image.ImgUrl,
                     IsPrimary = image.IsPrimary
                 };

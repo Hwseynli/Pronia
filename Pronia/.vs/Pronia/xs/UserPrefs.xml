@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{25086B2B-9D2D-4EFD-A29C-0963859413C0}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/AppAdmin/Controllers/ProductController.cs">
+    <Files>
+      <File FileName="Areas/AppAdmin/Controllers/ProductController.cs" Line="217" Column="24" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -10,13 +11,15 @@
             <Node name="Pronia">
               <Node name="Areas">
                 <Node name="AppAdmin">
-                  <Node name="Controllers">
-                    <Node name="EmployeeController.cs" selected="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Product" expanded="True" />
+                    <Node name="Size" selected="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="Product" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -24,8 +27,14 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Pronia PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/Controllers/TestliController.cs" relfile="Areas/AppAdmin/Controllers/TestliController.cs" line="24" column="1" />
+      <Breakpoint file="/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/DAL/hecne.cs" relfile="Areas/AppAdmin/DAL/hecne.cs" line="42" column="1" />
+      <Breakpoint file="/Users/zeyneb/Projects/Pronia/Pronia/Areas/AppAdmin/DAL/hecne.cs" relfile="Areas/AppAdmin/DAL/hecne.cs" line="32" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

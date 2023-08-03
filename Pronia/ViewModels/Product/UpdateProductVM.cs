@@ -18,7 +18,6 @@
         public List<Guid> TagIds { get; set; }
         public List<Guid> ProductInfoIds { get; set; }
         public List<ImageVM> ImageVMs { get; set; }
-        //public List<InfoVM> InfoVMs{ get; set; }
         public List<Guid> ImagesIds { get; set; }
     }
 
@@ -29,13 +28,5 @@
         public string ImageUrl { get; set; }
         public bool? IsPrimary { get; set; }
     }
-    //public class InfoVM
-    //{
-    //    public Guid Id { get; set; }
-    //    [StringLength(100)]
-    //    public string Name { get; set; }
-    //    [StringLength(500)]
-    //    public string Description { get; set; }
-    //}
 }
 
